@@ -9,6 +9,6 @@ bot:
 database:
   host: 0.0.0.0
   port: 5432
-  user: kts_hw
-  password: kts
-  database: kts_hw_db
+  user: postgres
+  password: postgres
+  database: postgres

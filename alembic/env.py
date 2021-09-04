@@ -13,7 +13,7 @@ from alembic import context
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 #
-with open(os.environ['ALEMBIC_CFG_PATH']) as fh:
+with open(os.environ['CONFIGPATH']) as fh:
     raw_cfg = yaml.safe_load(fh)
     db_config = DatabaseConfig(**raw_cfg['database'])
     print(db_config)
