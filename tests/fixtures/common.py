@@ -25,7 +25,7 @@ def server():
         )
     )
     app.on_startup.clear()
-    # app.on_cleanup.clear()
+    app.on_cleanup.clear()
     app.on_shutdown.clear()
 
     app.store.vk_api = AsyncMock()
@@ -33,7 +33,7 @@ def server():
 
     app.database = Database(app)
     app.on_startup.append(app.database.connect)
-    app.on_shutdown.append(app.database.disconnect)
+    # app.on_shutdown.append(app.database.disconnect)
 
     app.on_startup.append(app.store.admins.connect)
     app.on_shutdown.append(app.store.admins.disconnect)

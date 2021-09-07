@@ -1,6 +1,5 @@
 from typing import Optional
 
-from asyncpg import UniqueViolationError, ForeignKeyViolationError
 from sqlalchemy.dialects.postgresql import insert
 
 from app.base.base_accessor import BaseAccessor

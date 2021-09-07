@@ -3,8 +3,6 @@ import typing
 import gino
 from gino.api import Gino
 from app.store.database.gino import db
-from app.admin.models import *
-from app.quiz.models import *
 from sqlalchemy.engine.url import URL
 
 if typing.TYPE_CHECKING:
@@ -16,7 +14,7 @@ class Database:
 
     def __init__(self, app: "Application"):
         self.app = app
-        # self.db: Optional[Gino] = None
+        self.db: typing.Optional[Gino] = None
 
     async def connect(self, *_, **kw):
         self._engine = await gino.create_engine(
@@ -35,4 +33,6 @@ class Database:
         self.db.bind = self._engine
 
     async def disconnect(self, *_, **kw):
-        await self.db.pop_bind().close()
+        pass
+        # await self.db.pop_bind().close()
+
